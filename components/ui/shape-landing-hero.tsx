@@ -153,7 +153,7 @@ function HeroGeometric({
                         variants={fadeUpVariants}
                         initial="hidden"
                         animate="visible"
-                        className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.03] border border-white/[0.08] mb-8 md:mb-12"
+                        className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.03] border border-white/[0.08] mb-4 md:mb-6"
                     >
                         <Circle className="h-2 w-2 fill-rose-500/80" />
                         <span className="text-sm text-white/60 tracking-wide">
@@ -176,7 +176,7 @@ function HeroGeometric({
                             overlayDelay={0.05}
                             overlayDuration={0.4}
                             springDuration={600}
-                            className="font-sunhacks gap-26"
+                            className="font-sunhacks"
                           />
                         </div>
                         <style jsx global>{`

@@ -75,7 +75,7 @@ export function HeroScrollDemo() {
         </div>
       </ContainerScroll>
       {/* Countdown at the bottom */}
-      <div className="w-full flex justify-center mt-8">
+      <div className="w-full flex justify-center">
         <DemoOne />
       </div>
     </div>

@@ -50,7 +50,7 @@ GradientButton.displayName = "GradientButton"
 
 function Demo() {
   return (
-    <div className="flex gap-8">
+    <div className="flex gap-4">
       <GradientButton>JOIN DISCORD</GradientButton>
       <GradientButton variant="variant">REGISTER NOW</GradientButton>
     </div>

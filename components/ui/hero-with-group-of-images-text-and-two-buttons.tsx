@@ -17,8 +17,8 @@ function Hero() {
       {/* Starfield Background */}
       <StarfieldBackground starCount={120} />
       <div className="container mx-auto relative z-10">
-        <div className="flex flex-col md:grid md:grid-cols-2 gap-8 items-start">
-          <div className="flex gap-4 flex-col">
+        <div className="flex flex-col md:grid md:grid-cols-2 gap-4 items-start">
+          <div className="flex gap-2 flex-col">
             <div>
               <Badge variant="outline" className="text-white border-white">About</Badge>
             </div>

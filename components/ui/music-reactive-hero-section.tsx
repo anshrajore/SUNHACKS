@@ -2,6 +2,7 @@
 
 import React, { useRef, useEffect, useState, useCallback, useMemo } from 'react';
 import Image from 'next/image';
+import { BrandScroller, BrandScrollerReverse } from "@/components/ui/brand-scoller";
 
 export const Component = () => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
@@ -479,16 +480,25 @@ export const Component = () => {
     }
   }, [updateProgress]);
 
+  const DemoOne = () => {
+    return (
+      <div className="flex flex-col gap-2 items-center justify-center w-screen text-white">
+        <BrandScroller />
+        <BrandScrollerReverse />
+      </div>
+    );
+  };
+
   return (
     <div className="music-reactive-hero relative w-full h-full min-h-screen">
       {/* Sunhack Title Logo - Top Right */}
-      <div className="absolute top-2 left-4 md:top-2 md:right-8 z-40">
+      <div className="absolute top-4 left-4 md:top-2 md:right-8 z-40">
         <Image 
           src="/SunhackTitle.png" 
           alt="Sunhack Title Logo" 
           width={220} 
           height={80} 
-          className="w-32 h-auto md:w-56 lg:w-64 xl:w-72 max-w-full object-contain drop-shadow-lg"
+          className="w-32 h-auto md:w-56 lg:w-64 xl:w-82 max-w-full object-contain drop-shadow-lg"
           priority
         />
       </div>
@@ -520,6 +530,10 @@ export const Component = () => {
           className="progress-bar" 
           style={{ width: `${audioProgress}%` }}
         />
+      </div>
+      {/* Brand Scroller as a separate full-width section at the very bottom, always in front */}
+      <div className="absolute left-0 right-0 bottom-0 w-screen z-50">
+        <DemoOne />
       </div>
     </div>
   );
