@@ -480,9 +480,19 @@ export const Component = () => {
   }, [updateProgress]);
 
   return (
-    <div className="music-reactive-hero">
+    <div className="music-reactive-hero relative w-full h-full min-h-screen">
+      {/* Sunhack Title Logo - Top Right */}
+      <div className="absolute top-2 left-4 md:top-2 md:right-8 z-40">
+        <Image 
+          src="/SunhackTitle.png" 
+          alt="Sunhack Title Logo" 
+          width={220} 
+          height={80} 
+          className="w-32 h-auto md:w-56 lg:w-64 xl:w-72 max-w-full object-contain drop-shadow-lg"
+          priority
+        />
+      </div>
       <canvas ref={canvasRef} className="visualization-canvas" />
-      
       {/* HWI Logo */}
       <div className="hwi-logo">
         <Image 
@@ -493,29 +503,24 @@ export const Component = () => {
           height={100}
         />
       </div>
-      
       <div className="hero-content">
         <h1 className="hero-title">
           <span className="title-line">SUNHACKS</span>
-          </h1>
-          <p className="hero-tagline">A joint initiative with </p>
-          <h1 className="hero-title">
+        </h1>
+        <p className="hero-tagline">A joint initiative with </p>
+        <h1 className="hero-title">
           <span className="title-line">Hack </span>
           <span className="title-line">With India</span>
         </h1>
         <p className="hero-subtitle">Where Innovation Begins – In collaboration with Hack with India.</p>
         <p className="hero-credit">Innovate Today, Impact Tomorrow.</p>
       </div>
-      
-    
-      
       <div className="audio-progress">
         <div 
           className="progress-bar" 
           style={{ width: `${audioProgress}%` }}
         />
       </div>
-      
     </div>
   );
 };

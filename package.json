@@ -23,7 +23,7 @@
     "clsx": "^2.1.1",
     "cobe": "^0.6.4",
     "embla-carousel-react": "^8.6.0",
-    "framer-motion": "^12.20.0",
+    "framer-motion": "^12.20.1",
     "gsap": "^3.13.0",
     "lucide-react": "^0.522.0",
     "motion": "^12.19.1",
