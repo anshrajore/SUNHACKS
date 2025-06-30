@@ -91,12 +91,12 @@ function HeroGeometric({
         <div className="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-[#030303]">
             {/* Sandip University Logo - Top Left with fade-in */}
             <motion.div
-                className="absolute top-1 left-4 md:top-1 md:right-8 z-30"
+                className="absolute top-0 left-4 md:top-0 md:right-5 z-30"
                 initial={{ opacity: 0, y: -30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1.2, delay: 0.3, ease: [0.23, 0.86, 0.39, 0.96] }}
             >
-                <Image src="/sandip logo.png" alt="Sandip University Logo" width={180} height={180} className="w-38 h-38 md:w-54 md:h-54 object-contain" priority />
+                <Image src="/sandip logo.png" alt="Sandip University Logo" width={180} height={180} className="w-38 h-38 md:w-54  object-contain" priority />
             </motion.div>
             <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/[0.05] via-transparent to-rose-500/[0.05] blur-3xl" />
 
@@ -171,13 +171,26 @@ function HeroGeometric({
                             text="SUNHACKS"
                             textColor="text-white"
                             overlayColor="text-rose-500"
-                            fontSize="text-7xl sm:text-[8rem] md:text-[9rem]"
+                            fontSize="text-6xl sm:text-[10rem] md:text-[12rem]"
                             letterDelay={0.08}
                             overlayDelay={0.05}
                             overlayDuration={0.4}
                             springDuration={600}
+                            className="font-sunhacks gap-26"
                           />
                         </div>
+                        <style jsx global>{`
+                          @font-face {
+                            font-family: 'SunhacksFont';
+                            src: url('/font.woff2') format('woff2');
+                            font-weight: normal;
+                            font-style: normal;
+                            font-display: swap;
+                          }
+                          .font-sunhacks {
+                            font-family: 'SunhacksFont', sans-serif !important;
+                          }
+                        `}</style>
                         <br />
                         <span
                             className={cn(

@@ -13,6 +13,7 @@ interface RevealTextProps {
   overlayDuration?: number;
   springDuration?: number;
   letterImages?: string[];
+  className?: string;
 }
 
 export function RevealText({
@@ -33,7 +34,8 @@ export function RevealText({
     "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80", // I
     "https://images.unsplash.com/photo-1519904981063-b0cf448d479e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80", // N
     "https://images.unsplash.com/photo-1540979388789-6cee28a1cdc9?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80", // G
-  ]
+  ],
+  className = "",
 }: RevealTextProps) {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const [showRedText, setShowRedText] = useState(false);
@@ -53,7 +55,7 @@ export function RevealText({
   }, [text.length, letterDelay, springDuration]);
 
   return (
-    <div className="flex items-center justify-center relative">
+    <div className={`flex items-center justify-center relative ${className}`}>
       <div className="flex">
         {text.split("").map((letter, index) => (
           <motion.span
