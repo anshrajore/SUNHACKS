@@ -1,7 +1,7 @@
 "use client";
- 
-import { BsAmazon, BsGoogle, BsSpotify, BsYoutube, BsCircleFill } from "react-icons/bs";
- 
+
+import { BsCircleFill } from "react-icons/bs";
+
 export const BrandScroller = () => {
   return (
     <div className="group flex overflow-hidden py-2 [--gap:2rem] [gap:var(--gap))] flex-row max-w-full [--duration:40s] [mask-image:linear-gradient(to_right,_rgba(0,_0,_0,_0),rgba(0,_0,_0,_1)_10%,rgba(0,_0,_0,_1)_90%,rgba(0,_0,_0,_0))]">
@@ -33,7 +33,7 @@ export const BrandScroller = () => {
     </div>
   );
 };
- 
+
 export const BrandScrollerReverse = () => {
   return (
     <div className="group flex overflow-hidden py-2 [--gap:2rem] [gap:var(--gap))] flex-row max-w-full [--duration:40s] [mask-image:linear-gradient(to_right,_rgba(0,_0,_0,_0),rgba(0,_0,_0,_1)_10%,rgba(0,_0,_0,_1)_90%,rgba(0,_0,_0,_0))]">
