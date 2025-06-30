@@ -43,7 +43,7 @@ function TrackRing({
     const vw = window.innerWidth;
     const vh = window.innerHeight;
     const minDim = Math.min(vw, vh);
-    const baseRadius = Math.max(70, Math.min(minDim * 0.22, 160));
+    const baseRadius = Math.max(50, Math.min(minDim * 0.22, 160));
     const isMobile = minDim < 700;
     
     setSizes({
@@ -65,7 +65,7 @@ function TrackRing({
   return (
     <div
       ref={ringRef}
-      className={cn("relative w-full h-full flex items-center justify-center", className)}
+      className={cn("relative w-full h-full flex items-center justify-center p-2 sm:p-4 md:p-8", className)}
       style={{
         perspective: 1200,
         transform: `rotateY(${parallax.x * 10}deg) rotateX(${-parallax.y * 10}deg)`
@@ -73,7 +73,7 @@ function TrackRing({
     >
       {/* Central Tracks Heading */}
       <div className="relative z-20 text-center">
-        <h1 className="text-[clamp(2rem,7vw,3.5rem)] font-extrabold bg-gradient-to-b from-white via-blue-200 to-blue-400 bg-clip-text text-transparent animate-gradient-glow">
+        <h1 className="text-[clamp(1.5rem,6vw,3.5rem)] font-extrabold bg-gradient-to-b from-white via-blue-200 to-blue-400 bg-clip-text text-transparent animate-gradient-glow">
           Tracks
         </h1>
       </div>
@@ -109,17 +109,17 @@ function TrackRing({
                   left: '50%',
                   top: '50%',
                   transform: `translate(-50%, -50%) translate(${x}px, ${y}px)`,
-                  minWidth: sizes.isMobile ? 64 : 100,
-                  maxWidth: sizes.isMobile ? 110 : 160,
+                  minWidth: sizes.isMobile ? 48 : 80,
+                  maxWidth: sizes.isMobile ? 90 : 140,
                 }}
               >
                 <motion.button
                   tabIndex={0}
                   aria-label={track}
-                  className="px-2 sm:px-4 py-1 sm:py-2 bg-background/20 backdrop-blur-md border border-white/30 rounded-full text-xs sm:text-sm md:text-base font-semibold text-white whitespace-nowrap shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-400 hover:scale-105 hover:shadow-blue-400/60 transition-all duration-200 ring-glow"
+                  className="px-2 sm:px-3 md:px-4 py-1 sm:py-2 bg-background/20 backdrop-blur-md border border-white/30 rounded-full text-xs sm:text-sm md:text-base font-semibold text-white whitespace-nowrap shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-400 hover:scale-105 hover:shadow-blue-400/60 transition-all duration-200 ring-glow"
                   style={{
                     boxShadow: '0 0 12px 2px rgba(59,130,246,0.25), 0 0 24px 4px rgba(147,51,234,0.18)',
-                    fontSize: sizes.isMobile ? 'clamp(0.8rem, 3vw, 1.1rem)' : 'clamp(1rem, 1.5vw, 1.2rem)',
+                    fontSize: sizes.isMobile ? 'clamp(0.7rem, 2.5vw, 1.1rem)' : 'clamp(1rem, 1.2vw, 1.2rem)',
                   }}
                   onClick={() => alert(`More info about ${track}`)}
                   onKeyDown={e => {
@@ -129,7 +129,7 @@ function TrackRing({
                     }
                   }}
                 >
-                  <span className="mr-2 text-lg align-middle">{icon}</span>
+                  <span className="mr-2 text-base sm:text-lg align-middle">{icon}</span>
                   <span className="align-middle">{track}</span>
                 </motion.button>
               </div>
@@ -149,6 +149,8 @@ function TrackRing({
               height: `${ring.radius * 2}px`,
               boxShadow: '0 0 32px 4px rgba(59,130,246,0.08)',
               filter: 'blur(0.5px)',
+              minWidth: sizes.isMobile ? 80 : 120,
+              minHeight: sizes.isMobile ? 80 : 120,
             }}
           />
         ))}
@@ -156,7 +158,7 @@ function TrackRing({
 
       {/* Floating Icons */}
       <motion.div
-        className="absolute top-1/4 left-1/4 w-6 sm:w-8 h-6 sm:h-8 bg-blue-500/20 rounded-full flex items-center justify-center"
+        className="absolute top-1/4 left-1/4 w-4 sm:w-6 h-4 sm:h-6 bg-blue-500/20 rounded-full flex items-center justify-center"
         animate={{
           y: [-10, 10, -10],
           rotate: [0, 180, 360],
@@ -167,11 +169,11 @@ function TrackRing({
           ease: "easeInOut",
         }}
       >
-        <div className="w-2 sm:w-3 h-2 sm:h-3 bg-blue-400 rounded-full" />
+        <div className="w-1 sm:w-2 h-1 sm:h-2 bg-blue-400 rounded-full" />
       </motion.div>
 
       <motion.div
-        className="absolute top-3/4 right-1/4 w-4 sm:w-6 h-4 sm:h-6 bg-purple-500/20 rounded-full flex items-center justify-center"
+        className="absolute top-3/4 right-1/4 w-3 sm:w-5 h-3 sm:h-5 bg-purple-500/20 rounded-full flex items-center justify-center"
         animate={{
           y: [10, -10, 10],
           rotate: [360, 180, 0],
@@ -186,7 +188,7 @@ function TrackRing({
       </motion.div>
 
       <motion.div
-        className="absolute bottom-1/4 left-1/3 w-3 sm:w-4 h-3 sm:h-4 bg-green-500/20 rounded-full flex items-center justify-center"
+        className="absolute bottom-1/4 left-1/3 w-2 sm:w-3 h-2 sm:h-3 bg-green-500/20 rounded-full flex items-center justify-center"
         animate={{
           x: [-5, 5, -5],
           y: [-5, 5, -5],
@@ -247,17 +249,17 @@ export function StarfieldBackground({ starCount = 100, className = "absolute ins
 
 function SpaceTracksDemo() {
   return (
-    <div className="min-h-[80vh] sm:min-h-screen w-full bg-black overflow-hidden relative px-2 sm:px-0">
+    <div className="min-h-[80vh] sm:min-h-screen w-full bg-black overflow-hidden relative px-2 sm:px-4 md:px-8">
       {/* Starfield Background */}
       <StarfieldBackground />
 
       {/* Half Globe on the left, vertically centered and responsive */}
-      <div className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 h-[40vh] w-[80vw] max-w-[350px] sm:h-[60vh] sm:w-[60vw] sm:max-w-[500px] md:h-[70vh] md:w-[50vw] md:max-w-[700px] pointer-events-none z-10">
+      <div className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 h-[30vh] w-[60vw] max-w-[220px] sm:h-[40vh] sm:w-[80vw] sm:max-w-[350px] md:h-[60vh] md:w-[60vw] md:max-w-[500px] lg:h-[70vh] lg:w-[50vw] lg:max-w-[700px] pointer-events-none z-10">
         <Globe className="h-full w-full" />
       </div>
 
       {/* Main Content */}
-      <div className="relative z-20 h-[60vh] sm:h-screen flex items-center justify-center p-2 sm:p-8">
+      <div className="relative z-20 h-[60vh] sm:h-screen flex items-center justify-center p-2 sm:p-4 md:p-8">
         <TrackRing />
       </div>
     </div>
