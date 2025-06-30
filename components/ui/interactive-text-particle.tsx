@@ -159,7 +159,7 @@ const ParticleTextEffect: React.FC<ParticleTextEffectProps> = ({
     particlesRef.current.splice(pixels.length, particlesRef.current.length);
   };
 
-  const write = () => {
+  const write = useCallback(() => {
     const canvas = canvasRef.current;
     const ctx = ctxRef.current;
     if (!canvas || !ctx) return;
@@ -184,17 +184,7 @@ const ParticleTextEffect: React.FC<ParticleTextEffectProps> = ({
 
     ctx.fillText(textBox.str, 0.5 * canvas.width, 0.5 * canvas.height);
     dottify();
-  };
-
-  const animate = () => {
-    const ctx = ctxRef.current;
-    const canvas = canvasRef.current;
-    if (!ctx || !canvas) return;
-
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    (particlesRef.current as ParticleClass[]).forEach(p => p.move(interactionRadiusRef.current, hasPointerRef.current));
-    animationIdRef.current = requestAnimationFrame(animate);
-  };
+  }, [text, colors, dottify, textBox, interactionRadiusRef, canvasRef, ctxRef]);
 
   const initialize = useCallback(() => {
     const canvas = canvasRef.current;
@@ -263,6 +253,16 @@ const ParticleTextEffect: React.FC<ParticleTextEffectProps> = ({
 
   const handlePointerEnter = () => {
     hasPointerRef.current = true;
+  };
+
+  const animate = () => {
+    const ctx = ctxRef.current;
+    const canvas = canvasRef.current;
+    if (!ctx || !canvas) return;
+
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    (particlesRef.current as ParticleClass[]).forEach(p => p.move(interactionRadiusRef.current, hasPointerRef.current));
+    animationIdRef.current = requestAnimationFrame(animate);
   };
 
   return (

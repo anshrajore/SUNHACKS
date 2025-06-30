@@ -257,4 +257,24 @@ function SpaceTracksDemo() {
   );
 }
 
+export function HeroSectionWithStarfield() {
+  return (
+    <section className="relative min-h-[80vh] sm:min-h-screen w-full bg-black overflow-hidden flex items-center justify-center px-4 py-16">
+      {/* Starfield Background */}
+      <StarfieldBackground starCount={120} />
+      <div className="relative z-10 max-w-3xl mx-auto text-center flex flex-col items-center justify-center">
+        <h1 className="text-3xl md:text-5xl font-extrabold bg-gradient-to-b from-white via-blue-200 to-blue-400 bg-clip-text text-transparent mb-6 animate-gradient-glow">
+          Innovate Boldly. Break Records. Build the Future.
+        </h1>
+        <p className="text-base md:text-lg lg:text-xl text-white/90 font-medium leading-relaxed shadow-lg rounded-xl bg-black/60 backdrop-blur-md p-6">
+          SunHacks is India&apos;s premier GenAI hackathon, hosted in Nashik by Sandip University. Designed to unite the country&apos;s brightest minds, this groundbreaking 36-hour in-person event brings together over 1500+ developers, data scientists, and AI innovators to solve real-world challenges using Generative AI and cutting-edge technologies.<br/><br/>
+          As the organizers of India&apos;s Largest GenAI Hackathon, SunHacks is not only a platform for breakthrough ideas — it&apos;s a World Record attempt, pushing the boundaries of collaborative innovation at scale.<br/><br/>
+          With curated tracks like FinTech, HealthTech, Sustainability, SaaS, and GenAI/ML, participants will engage in high-impact ideation, hands-on mentorship, and live pitching to top industry experts. Whether you&apos;re a seasoned developer or a rising tech enthusiast, SunHacks offers national visibility, deep learning experiences, and unmatched networking with recruiters, mentors, and fellow visionaries.<br/><br/>
+          Join us in this transformative journey — where technology meets ambition, and innovation makes history.
+        </p>
+      </div>
+    </section>
+  );
+}
+
 export default SpaceTracksDemo; 
