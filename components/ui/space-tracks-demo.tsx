@@ -3,6 +3,8 @@
 import { cn } from '@/lib/utils';
 import { motion } from 'framer-motion';
 import React, { useState, useEffect, useRef } from 'react';
+import { Hero } from "@/components/ui/hero-with-group-of-images-text-and-two-buttons";
+import { Globe } from "@/components/ui/globe";
 
 const TRACK_ICONS: Record<string, string> = {
   'Gen AI & ML': '🤖',
@@ -48,9 +50,9 @@ function TrackRing({
       baseRadius,
       isMobile,
       trackRings: [
-        { tracks: ['Gen AI & ML', 'SaaS'], radius: baseRadius * 0.8, duration: duration, delay: 0 },
-        { tracks: ['HealthTech', 'Fintech'], radius: baseRadius * 1.1, duration: duration * 1.1, delay: 2 },
-        { tracks: ['Sustainable ', 'Mystery Track'], radius: baseRadius * 1.4, duration: duration * 0.9, delay: 4 },
+        { tracks: ['Gen AI & ML', 'SaaS'], radius: baseRadius * 0.7, duration: duration, delay: 0 },
+        { tracks: ['HealthTech', 'Fintech'], radius: baseRadius * 1.3, duration: duration * 1.1, delay: 2 },
+        { tracks: ['Sustainable ', 'Mystery Track'], radius: baseRadius * 1.8, duration: duration * 0.9, delay: 4 },
       ]
     });
 
@@ -141,7 +143,7 @@ function TrackRing({
         {sizes.trackRings.map((ring, index) => (
           <div
             key={index}
-            className="absolute border border-white/10 rounded-full ring-blur"
+            className="absolute border border-white rounded-full ring-blur"
             style={{
               width: `${ring.radius * 2}px`,
               height: `${ring.radius * 2}px`,
@@ -249,32 +251,19 @@ function SpaceTracksDemo() {
       {/* Starfield Background */}
       <StarfieldBackground />
 
+      {/* Half Globe on the left, vertically centered */}
+      <div className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 h-[70vh] w-[90vw] max-w-[700px] pointer-events-none z-10 hidden sm:block">
+        <Globe className="h-full w-full" />
+      </div>
+
       {/* Main Content */}
-      <div className="relative z-10 h-[60vh] sm:h-screen flex items-center justify-center p-2 sm:p-8">
+      <div className="relative z-20 h-[60vh] sm:h-screen flex items-center justify-center p-2 sm:p-8">
         <TrackRing />
       </div>
     </div>
   );
 }
 
-export function HeroSectionWithStarfield() {
-  return (
-    <section className="relative min-h-[80vh] sm:min-h-screen w-full bg-black overflow-hidden flex items-center justify-center px-4 py-16">
-      {/* Starfield Background */}
-      <StarfieldBackground starCount={120} />
-      <div className="relative z-10 max-w-3xl mx-auto text-center flex flex-col items-center justify-center">
-        <h1 className="text-3xl md:text-5xl font-extrabold bg-gradient-to-b from-white via-blue-200 to-blue-400 bg-clip-text text-transparent mb-6 animate-gradient-glow">
-          Innovate Boldly. Break Records. Build the Future.
-        </h1>
-        <p className="text-base md:text-lg lg:text-xl text-white/90 font-medium leading-relaxed shadow-lg rounded-xl bg-black/60 backdrop-blur-md p-6">
-          SunHacks is India&apos;s premier GenAI hackathon, hosted in Nashik by Sandip University. Designed to unite the country&apos;s brightest minds, this groundbreaking 36-hour in-person event brings together over 1500+ developers, data scientists, and AI innovators to solve real-world challenges using Generative AI and cutting-edge technologies.<br/><br/>
-          As the organizers of India&apos;s Largest GenAI Hackathon, SunHacks is not only a platform for breakthrough ideas — it&apos;s a World Record attempt, pushing the boundaries of collaborative innovation at scale.<br/><br/>
-          With curated tracks like FinTech, HealthTech, Sustainability, SaaS, and GenAI/ML, participants will engage in high-impact ideation, hands-on mentorship, and live pitching to top industry experts. Whether you&apos;re a seasoned developer or a rising tech enthusiast, SunHacks offers national visibility, deep learning experiences, and unmatched networking with recruiters, mentors, and fellow visionaries.<br/><br/>
-          Join us in this transformative journey — where technology meets ambition, and innovation makes history.
-        </p>
-      </div>
-    </section>
-  );
-}
+export { Hero as HeroSectionWithStarfield };
 
 export default SpaceTracksDemo; 

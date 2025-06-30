@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Circle } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Demo as GradientButtonDemo } from "@/components/ui/gradient-button";
+import Image from "next/image";
 
 
 function ElegantShape({
@@ -71,7 +72,6 @@ function ElegantShape({
         </motion.div>
     );
 }
-
 function HeroGeometric({
     badge = "Welcome to",
     title1 = "SUNHACKS",
@@ -90,6 +90,15 @@ function HeroGeometric({
 
     return (
         <div className="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-[#030303]">
+            {/* Sandip University Logo - Top Left with fade-in */}
+            <motion.div
+                className="absolute top-1 left-4 md:top-1 md:right-8 z-30"
+                initial={{ opacity: 0, y: -30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1.2, delay: 0.3, ease: [0.23, 0.86, 0.39, 0.96] }}
+            >
+                <Image src="/sandip logo.png" alt="Sandip University Logo" width={180} height={180} className="w-38 h-38 md:w-54 md:h-54 object-contain" priority />
+            </motion.div>
             <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/[0.05] via-transparent to-rose-500/[0.05] blur-3xl" />
 
             <div className="absolute inset-0 overflow-hidden">

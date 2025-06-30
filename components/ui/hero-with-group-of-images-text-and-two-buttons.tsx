@@ -1,5 +1,6 @@
 import { Badge } from "@/components/ui/badge";
 import Image from "next/image";
+import { StarfieldBackground } from "@/components/ui/space-tracks-demo";
 
 const aboutImages = [
   { src: "/tt8.jpg", alt: "Group discussion in classroom" },
@@ -12,8 +13,10 @@ const aboutImages = [
 
 function Hero() {
   return (
-    <div className="w-full pt-8 pb-12 lg:pt-12 lg:pb-20 px-4">
-      <div className="container mx-auto">
+    <div className="relative w-full pt-8 pb-12 lg:pt-12 lg:pb-20 px-4 overflow-hidden bg-black">
+      {/* Starfield Background */}
+      <StarfieldBackground starCount={120} />
+      <div className="container mx-auto relative z-10">
         <div className="flex flex-col md:grid md:grid-cols-2 gap-8 items-start">
           <div className="flex gap-4 flex-col">
             <div>
