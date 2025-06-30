@@ -2,7 +2,6 @@
 
 import { useEffect } from "react";
 import { useAnimate } from "motion/react";
-import Floating from "@/components/ui/parallax-floating";
 import SpaceTracksDemo from "./space-tracks-demo";
 import SponsorsSection from "./sponsors-section";
 import Testimonials from "./testimonials-section";
@@ -20,7 +19,6 @@ export function FancyPreviewSection() {
       <section className="relative w-full min-h-screen flex items-center justify-center bg-black overflow-hidden">
         <div className="w-full h-full flex items-center justify-center" ref={scope}>
           <SpaceTracksDemo />
-          <Floating sensitivity={-1} className="overflow-hidden">{/* No floating elements */}<></></Floating>
         </div>
       </section>
       <SponsorsSection />

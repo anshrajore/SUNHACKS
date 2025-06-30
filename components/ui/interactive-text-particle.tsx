@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState, useCallback } from 'react';
 
 interface Pointer {
   x?: number;
@@ -196,7 +196,7 @@ const ParticleTextEffect: React.FC<ParticleTextEffectProps> = ({
     animationIdRef.current = requestAnimationFrame(animate);
   };
 
-  const initialize = () => {
+  const initialize = useCallback(() => {
     const canvas = canvasRef.current;
     const ctx = ctxRef.current;
     if (!canvas || !ctx) return;
@@ -206,7 +206,7 @@ const ParticleTextEffect: React.FC<ParticleTextEffectProps> = ({
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
     write();
-  };
+  }, [canvasSize, write]);
 
   useEffect(() => {
     const handleResize = () => {
@@ -222,7 +222,7 @@ const ParticleTextEffect: React.FC<ParticleTextEffectProps> = ({
 
   useEffect(() => {
     initialize();
-  }, [text, colors, animationForce, particleDensity, canvasSize]);
+  }, [text, colors, animationForce, particleDensity, canvasSize, initialize]);
 
   useEffect(() => {
     const canvas = canvasRef.current;

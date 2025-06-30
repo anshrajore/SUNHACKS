@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
+import Image from "next/image";
 
 const sponsors = [
   { name: "Sponsor 1", logo: "/public/logo1.png" },
@@ -60,9 +61,11 @@ export default function SponsorsSection() {
             className="flex items-center justify-center bg-white rounded-2xl shadow-lg h-24 md:h-28 px-4 py-2 transition-transform hover:scale-105"
             style={{ minHeight: 96 }}
           >
-            <img
-              src={s.logo}
+            <Image
+              src={s.logo.replace("/public", "")}
               alt={s.name}
+              width={120}
+              height={48}
               className="max-h-12 md:max-h-16 object-contain mx-auto"
               style={{ maxWidth: "90%" }}
             />
