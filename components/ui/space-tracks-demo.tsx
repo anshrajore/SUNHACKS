@@ -251,8 +251,8 @@ function SpaceTracksDemo() {
       {/* Starfield Background */}
       <StarfieldBackground />
 
-      {/* Half Globe on the left, vertically centered */}
-      <div className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 h-[70vh] w-[90vw] max-w-[700px] pointer-events-none z-10 hidden sm:block">
+      {/* Half Globe on the left, vertically centered and responsive */}
+      <div className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 h-[40vh] w-[80vw] max-w-[350px] sm:h-[60vh] sm:w-[60vw] sm:max-w-[500px] md:h-[70vh] md:w-[50vw] md:max-w-[700px] pointer-events-none z-10">
         <Globe className="h-full w-full" />
       </div>
 
