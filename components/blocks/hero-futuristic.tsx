@@ -44,7 +44,7 @@ const PostProcessing = ({
   const progressRef = useRef({ value: 0 });
 
   const render = useMemo(() => {
-    const postProcessing = new THREE.PostProcessing(gl as any);
+    const postProcessing = new THREE.PostProcessing(gl as THREE.WebGPURenderer);
     const scenePass = pass(scene, camera);
     const scenePassColor = scenePass.getTextureNode('output');
     const bloomPass = bloom(scenePassColor, strength, 0.5, threshold);
@@ -153,7 +153,7 @@ const Scene = () => {
     uniforms.uProgress.value = (Math.sin(clock.getElapsedTime() * 0.5) * 0.5 + 0.5);
     // Плавное появление
     if (meshRef.current && 'material' in meshRef.current && meshRef.current.material) {
-      const mat = meshRef.current.material as any;
+      const mat = meshRef.current.material as THREE.Material;
       if ('opacity' in mat) {
         mat.opacity = THREE.MathUtils.lerp(
           mat.opacity,
@@ -188,7 +188,7 @@ export const Html = () => {
     // Только на клиенте: генерируем случайные задержки для глитча
     setDelays(titleWords.map(() => Math.random() * 0.07));
     setSubtitleDelay(Math.random() * 0.1);
-  }, [titleWords.length]);
+  }, [titleWords]);
 
   useEffect(() => {
     if (visibleWords < titleWords.length) {
@@ -198,7 +198,7 @@ export const Html = () => {
       const timeout = setTimeout(() => setSubtitleVisible(true), 800);
       return () => clearTimeout(timeout);
     }
-  }, [visibleWords, titleWords.length]);
+  }, [visibleWords, titleWords]);
 
   return (
     <div className="h-svh">

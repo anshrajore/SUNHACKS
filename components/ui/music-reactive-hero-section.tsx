@@ -1,35 +1,42 @@
 "use client";
 
 import React, { useRef, useEffect, useState, useCallback } from 'react';
+import Image from 'next/image';
 
 export const Component = () => {
-  const canvasRef = useRef(null);
-  const grainCanvasRef = useRef(null);
-  const audioRef = useRef(null);
-  const animationRef = useRef(null);
-  const audioContextRef = useRef(null);
-  const analyserRef = useRef(null);
-  const beamRef = useRef(null);
+  const canvasRef = useRef<HTMLCanvasElement | null>(null);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
+  const animationRef = useRef<number | null>(null);
+  const analyserRef = useRef<AnalyserNode | null>(null);
+  const beamRef = useRef<Record<string, unknown> | null>(null);
   
   const [isPlaying, setIsPlaying] = useState(false);
-  const [isLoading, setIsLoading] = useState(true);
   const [audioProgress, setAudioProgress] = useState(0);
 
   // Film grain generator class
   class FilmGrain {
-    constructor(width, height) {
+    width: number;
+    height: number;
+    grainCanvas: HTMLCanvasElement;
+    grainCtx: CanvasRenderingContext2D | null;
+    grainData: ImageData | null;
+    frame: number;
+    constructor(width: number, height: number) {
       this.width = width;
       this.height = height;
       this.grainCanvas = document.createElement('canvas');
       this.grainCanvas.width = width;
       this.grainCanvas.height = height;
-      this.grainCtx = this.grainCanvas.getContext('2d');
+      const ctx = this.grainCanvas.getContext('2d');
+      if (!ctx) throw new Error('Could not get 2D context');
+      this.grainCtx = ctx;
       this.grainData = null;
       this.frame = 0;
       this.generateGrainPattern();
     }
 
     generateGrainPattern() {
+      if (!this.grainCtx) return;
       const imageData = this.grainCtx.createImageData(this.width, this.height);
       const data = imageData.data;
       
@@ -47,6 +54,8 @@ export const Component = () => {
 
     update() {
       this.frame++;
+      
+      if (!this.grainData || !this.grainCtx) return;
       
       // Regenerate grain every few frames for animation
       if (this.frame % 2 === 0) {
@@ -72,7 +81,7 @@ export const Component = () => {
       }
     }
 
-    apply(ctx, intensity = 0.05, colorize = true, hue = 0) {
+    apply(ctx: CanvasRenderingContext2D, intensity = 0.05, colorize = true, hue = 0) {
       ctx.save();
       
       // Apply grain with screen blend mode for lighter areas
@@ -96,7 +105,7 @@ export const Component = () => {
       ctx.restore();
     }
 
-    resize(width, height) {
+    resize(width: number, height: number) {
       this.width = width;
       this.height = height;
       this.grainCanvas.width = width;
@@ -105,33 +114,13 @@ export const Component = () => {
     }
   }
 
-  // Initialize audio
-  const initAudio = useCallback(() => {
-    if (!audioRef.current || audioContextRef.current) return;
-    
-    try {
-      const audioContext = new (window.AudioContext || window.webkitAudioContext)();
-      audioContextRef.current = audioContext;
-      
-      const analyser = audioContext.createAnalyser();
-      analyser.fftSize = 2048;
-      analyser.smoothingTimeConstant = 0.8;
-      analyserRef.current = analyser;
-      
-      const source = audioContext.createMediaElementSource(audioRef.current);
-      source.connect(analyser);
-      analyser.connect(audioContext.destination);
-    } catch (error) {
-      console.error('Error initializing audio:', error);
-    }
-  }, []);
-
   // Initialize canvas and animation
   const initCanvas = useCallback(() => {
-    const canvas = canvasRef.current;
+    const canvas = canvasRef.current as HTMLCanvasElement | null;
     if (!canvas) return;
     
     const ctx = canvas.getContext('2d');
+    if (!ctx) return;
     
     // Set canvas size
     const resizeCanvas = () => {
@@ -358,21 +347,27 @@ export const Component = () => {
         const tempCtx = tempCanvas.getContext('2d');
         
         // Copy current frame
-        tempCtx.drawImage(canvas, 0, 0);
+        if (tempCtx) {
+          tempCtx.drawImage(canvas, 0, 0);
+        }
         
         // Red channel shift
         ctx.globalCompositeOperation = 'multiply';
         ctx.fillStyle = 'rgb(255, 0, 0)';
         ctx.fillRect(0, 0, canvas.width, canvas.height);
         ctx.globalCompositeOperation = 'screen';
-        ctx.drawImage(tempCanvas, -2 * beam.postProcessing.chromaticAberration, 0);
+        if (tempCtx) {
+          ctx.drawImage(tempCanvas, -2 * beam.postProcessing.chromaticAberration, 0);
+        }
         
         // Blue channel shift
         ctx.globalCompositeOperation = 'multiply';
         ctx.fillStyle = 'rgb(0, 0, 255)';
         ctx.fillRect(0, 0, canvas.width, canvas.height);
         ctx.globalCompositeOperation = 'screen';
-        ctx.drawImage(tempCanvas, 2 * beam.postProcessing.chromaticAberration, 0);
+        if (tempCtx) {
+          ctx.drawImage(tempCanvas, 2 * beam.postProcessing.chromaticAberration, 0);
+        }
         
         ctx.restore();
       }
@@ -448,16 +443,11 @@ export const Component = () => {
     };
   }, [isPlaying]);
 
-  // Toggle playback
-  const togglePlayback = useCallback(() => {
-    // Demo mode - just toggle the animation state
-    setIsPlaying(!isPlaying);
-  }, [isPlaying]);
-
   // Update progress
   const updateProgress = useCallback(() => {
-    if (audioRef.current && audioRef.current.duration) {
-      const progress = (audioRef.current.currentTime / audioRef.current.duration) * 100;
+    const audio = audioRef.current as HTMLAudioElement | null;
+    if (audio && audio.duration) {
+      const progress = (audio.currentTime / audio.duration) * 100;
       setAudioProgress(progress);
     }
   }, []);
@@ -468,12 +458,12 @@ export const Component = () => {
   }, [initCanvas]);
 
   useEffect(() => {
-    const audio = audioRef.current;
+    const audio = audioRef.current as HTMLAudioElement | null;
     if (audio) {
-      const handleCanPlay = () => setIsLoading(false);
-      const handleError = (e) => {
+      const handleCanPlay = () => setIsPlaying(true);
+      const handleError = (e: Event) => {
         console.error('Audio error:', e);
-        setIsLoading(false);
+        setIsPlaying(false);
       };
       
       audio.addEventListener('canplay', handleCanPlay);
@@ -494,10 +484,12 @@ export const Component = () => {
       
       {/* HWI Logo */}
       <div className="hwi-logo">
-        <img 
+        <Image 
           src="/HWl2.svg" 
           alt="Hack With India Logo" 
           className="logo-image"
+          width={100}
+          height={100}
         />
       </div>
       
@@ -522,8 +514,6 @@ export const Component = () => {
           style={{ width: `${audioProgress}%` }}
         />
       </div>
-      
-      ]
       
     </div>
   );

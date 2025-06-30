@@ -498,7 +498,7 @@ function CameraController() {
   return null;
 }
 
-function EnhancedSpotlight(props: any) {
+function EnhancedSpotlight(props: Record<string, unknown>) {
   const light = useRef<THREE.SpotLight | null>(null);
   
   // Uncomment to see a visual helper for the spotlight

@@ -330,8 +330,9 @@
   justify-content: center;
   background: rgba(255, 255, 255, 0.1);
   border-radius: 50%;
-  backdrop-filter: blur(10px);
+  /* For Safari support */
   -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.2);
   transition: all 0.3s ease;
 }

@@ -134,12 +134,12 @@ const ParticleTextEffect: React.FC<ParticleTextEffectProps> = ({
     if (!ctx || !canvas || !textBox.x || !textBox.y || !textBox.w || !textBox.h) return;
 
     const data = ctx.getImageData(textBox.x, textBox.y, textBox.w, textBox.h).data;
-    const pixels = data.reduce((arr: any[], _, i, d) => {
+    const pixels = data.reduce((arr: { x: number; y: number; rgb: number[] }[], _, i, d) => {
       if (i % 4 === 0) {
         arr.push({
           x: (i / 4) % textBox.w!,
           y: Math.floor((i / 4) / textBox.w!),
-          rgb: d.slice(i, i + 4),
+          rgb: Array.from(d.slice(i, i + 4)) as number[],
         });
       }
       return arr;
@@ -153,7 +153,7 @@ const ParticleTextEffect: React.FC<ParticleTextEffectProps> = ({
         textBox.y! + p.y,
         p.rgb.slice(0, 3)
       );
-      particlesRef.current[i].draw();
+      (particlesRef.current as ParticleClass[])[i].draw();
     });
 
     particlesRef.current.splice(pixels.length, particlesRef.current.length);
@@ -192,7 +192,7 @@ const ParticleTextEffect: React.FC<ParticleTextEffectProps> = ({
     if (!ctx || !canvas) return;
 
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    particlesRef.current.forEach(p => p.move(interactionRadiusRef.current, hasPointerRef.current));
+    (particlesRef.current as ParticleClass[]).forEach(p => p.move(interactionRadiusRef.current, hasPointerRef.current));
     animationIdRef.current = requestAnimationFrame(animate);
   };
 

@@ -17,7 +17,6 @@ export const Component = () => {
   const menuRef = useRef(null);
 
   const smoothCameraPos = useRef({ x: 0, y: 30, z: 100 });
-  const cameraVelocity = useRef({ x: 0, y: 0, z: 0 });
   
   const [scrollProgress, setScrollProgress] = useState(0);
   const [currentSection, setCurrentSection] = useState(1);
@@ -548,15 +547,6 @@ export const Component = () => {
     
     return () => window.removeEventListener('scroll', handleScroll);
   }, [totalSections]);
-
-
-  const splitTitle = (text) => {
-    return text.split('').map((char, i) => (
-      <span key={i} className="title-char">
-        {char}
-      </span>
-    ));
-  };
 
   return (
     <div ref={containerRef} className="hero-container cosmos-style">
