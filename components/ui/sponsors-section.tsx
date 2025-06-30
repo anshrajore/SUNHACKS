@@ -265,7 +265,7 @@ export default function SponsorsSection() {
         @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
       `}</style>
       <div className="flex justify-center items-center w-full my-8">
-        <ScrollVelocity texts={["Sunhacks 2025", "Sunhacks 2025"]} velocity={100} className="custom-scroll-text text-center" />
+        <ScrollVelocity texts={["SUNHACKS 2025", "SUNHACKS 2025"]} velocity={100} className="custom-scroll-text text-center" />
       </div>
     </section>
   );

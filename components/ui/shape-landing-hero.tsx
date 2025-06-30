@@ -5,6 +5,7 @@ import { Circle } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Demo as GradientButtonDemo } from "@/components/ui/gradient-button";
 import Image from "next/image";
+import { RevealText } from "@/components/ui/reveal-text";
 
 
 function ElegantShape({
@@ -74,12 +75,10 @@ function ElegantShape({
 }
 function HeroGeometric({
     badge = "Welcome to",
-    title1 = "SUNHACKS",
-    title2 = "International level Hackathon",
+    title2 = "International Level Hackathon",
     description = "Leading the Future of AI — Organizing India's Largest GenAI Hackathon.",
 }: {
     badge?: string;
-    title1?: string;
     title2?: string;
     description?: string;
 }) {
@@ -167,19 +166,26 @@ function HeroGeometric({
                         initial="hidden"
                         animate="visible"
                     >
-                        <h1 className="text-4xl sm:text-6xl md:text-8xl font-bold mb-6 md:mb-8 tracking-tight">
-                            <span className="bg-clip-text text-transparent bg-gradient-to-b from-white to-white/80">
-                                {title1}
-                            </span>
-                            <br />
-                            <span
-                                className={cn(
-                                    "bg-clip-text text-transparent bg-gradient-to-r from-indigo-300 via-white/90 to-rose-300 "
-                                )}
-                            >
-                                {title2}
-                            </span>
-                        </h1>
+                        <div className="flex justify-center">
+                          <RevealText 
+                            text="SUNHACKS"
+                            textColor="text-white"
+                            overlayColor="text-rose-500"
+                            fontSize="text-7xl sm:text-[8rem] md:text-[9rem]"
+                            letterDelay={0.08}
+                            overlayDelay={0.05}
+                            overlayDuration={0.4}
+                            springDuration={600}
+                          />
+                        </div>
+                        <br />
+                        <span
+                            className={cn(
+                                "bg-clip-text text-transparent bg-gradient-to-r from-indigo-300 via-white/90 to-rose-300 text-3xl sm:text-5xl md:text-6xl font-bold "
+                            )}
+                        >
+                            {title2}
+                        </span>
                     </motion.div>
 
                     <motion.div
@@ -205,7 +211,7 @@ function HeroGeometric({
 export { HeroGeometric }
 
 function DemoHeroGeometric() {
-    return <HeroGeometric badge="Welcome to" title1="SUNHACKS" title2="International level Hackathon" description="Leading the Future of AI — Organizing India's Largest GenAI Hackathon." />;
+    return <HeroGeometric badge="Welcome to" title2="International Level Hackathon"  description="Leading the Future of AI — Organizing India's Largest GenAI Hackathon." />;
 }
 
 export { DemoHeroGeometric }

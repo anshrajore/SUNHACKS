@@ -6,6 +6,7 @@ import { StarfieldBackground } from "@/components/ui/space-tracks-demo";
 
 export function HeroScrollDemo() {
   return (
+    
     <div className="min-h-[80vh] sm:min-h-screen w-full bg-black overflow-hidden relative px-2 sm:px-0">
       <StarfieldBackground />
       <ContainerScroll
