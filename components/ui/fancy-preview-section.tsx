@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import { useAnimate } from "motion/react";
 import SpaceTracksDemo from "./space-tracks-demo";
 import SponsorsSection from "./sponsors-section";
-import Testimonials from "./testimonials-section";
+import { TestimonialsWithFAQ } from "./testimonials-section";
 import { HeroScrollDemo } from "@/components/ui/hero-scroll-demo";
 
 export function FancyPreviewSection() {
@@ -23,7 +23,7 @@ export function FancyPreviewSection() {
       </section>
       <SponsorsSection />
       <HeroScrollDemo />
-      <Testimonials />
+      <TestimonialsWithFAQ />
     </>
   );
 } 

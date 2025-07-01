@@ -249,12 +249,12 @@ export function StarfieldBackground({ starCount = 100, className = "absolute ins
 
 function SpaceTracksDemo() {
   return (
-    <div className="min-h-[80vh] sm:min-h-screen w-full bg-black overflow-hidden relative px-2 sm:px-4 md:px-8">
+    <div className="min-h-[80vh] sm:min-h-screen w-full bg-black overflow-x-hidden overflow-y-hidden relative px-2 sm:px-4 md:px-8">
       {/* Starfield Background */}
       <StarfieldBackground />
 
       {/* Half Globe on the left, vertically centered and responsive */}
-      <div className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 h-[30vh] w-[60vw] max-w-[220px] sm:h-[40vh] sm:w-[80vw] sm:max-w-[350px] md:h-[60vh] md:w-[60vw] md:max-w-[500px] lg:h-[70vh] lg:w-[50vw] lg:max-w-[700px] pointer-events-none z-10">
+      <div className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 h-[22vh] w-[50vw] max-w-[120px] sm:h-[30vh] sm:w-[60vw] sm:max-w-[220px] md:h-[40vh] md:w-[80vw] md:max-w-[350px] lg:h-[60vh] lg:w-[60vw] lg:max-w-[500px] xl:h-[70vh] xl:w-[50vw] xl:max-w-[700px] pointer-events-none z-10">
         <Globe className="h-full w-full" />
       </div>
 

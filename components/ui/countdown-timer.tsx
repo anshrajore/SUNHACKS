@@ -11,7 +11,7 @@ const DAY = HOUR * 24;
 
 export default function ShiftingCountdown() {
   return (
-    <div className="flex w-full max-w-5xl items-center bg-transparent mx-auto gap-0 md:gap-2 lg:gap-4">
+    <div className="flex flex-row w-full max-w-5xl items-center bg-transparent mx-auto gap-2 md:gap-4 lg:gap-6">
       <CountdownItem unit="Day" label="Days" />
       <CountdownItem unit="Hour" label="Hours" />
       <CountdownItem unit="Minute" label="Minutes" />
@@ -26,16 +26,16 @@ function CountdownItem({ unit, label }: { unit: string; label: string }) {
   const display = unit === "Second" ? String(time).padStart(2, '0') : time;
 
   return (
-    <div className="flex flex-1 flex-col items-center justify-center gap-1 px-1 md:px-2 lg:px-3 py-6 md:gap-2 md:py-8">
+    <div className="flex flex-1 flex-col items-center justify-center gap-1 px-1 md:px-2 lg:px-3 py-3 md:py-6 md:gap-2">
       <div className="relative w-full overflow-hidden text-center">
         <span
           ref={ref}
-          className="block text-3xl font-mono font-semibold dark:text-white text-white md:text-5xl lg:text-7xl transition-colors duration-500"
+          className="block text-base xs:text-2xl md:text-5xl lg:text-7xl font-mono font-semibold dark:text-white text-white transition-colors duration-500"
         >
           {display}
         </span>
       </div>
-      <span className="text-sm font-light dark:text-gray-400 text-gray-500 md:text-base lg:text-lg transition-colors duration-500">
+      <span className="text-xs xs:text-sm font-light dark:text-gray-400 text-gray-500 md:text-base lg:text-lg transition-colors duration-500">
         {label}
       </span>
       <div className="h-px w-full dark:bg-gray-700 bg-gray-300 mt-4 transition-colors duration-500"></div>

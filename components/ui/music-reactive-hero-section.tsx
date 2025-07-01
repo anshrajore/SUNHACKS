@@ -498,7 +498,7 @@ export const Component = () => {
           alt="Sunhack Title Logo" 
           width={220} 
           height={80} 
-          className="w-32 h-auto md:w-56 lg:w-64 xl:w-82 max-w-full object-contain drop-shadow-lg"
+          className="w-24 h-auto sm:w-32 md:w-56 lg:w-64 xl:w-82 max-w-full object-contain drop-shadow-lg"
           priority
         />
       </div>
@@ -509,8 +509,8 @@ export const Component = () => {
           src="/HWl2.svg" 
           alt="Hack With India Logo" 
           className="logo-image"
-          width={100}
-          height={100}
+          width={60}
+          height={60}
         />
       </div>
       <div className="hero-content">
@@ -532,7 +532,7 @@ export const Component = () => {
         />
       </div>
       {/* Brand Scroller as a separate full-width section at the very bottom, always in front */}
-      <div className="absolute left-0 right-0 bottom-0 w-screen z-50">
+      <div className="absolute left-0 right-0 bottom-0 w-screen z-50 px-1 sm:px-4">
         <DemoOne />
       </div>
     </div>

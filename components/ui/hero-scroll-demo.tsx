@@ -19,9 +19,9 @@ export { DemoOne };
 
 export function HeroScrollDemo() {
   return (
-    <div className="min-h-[80vh] sm:min-h-screen w-full bg-black overflow-hidden relative px-2 sm:px-0">
+    <div className="min-h-[80vh] sm:min-h-screen w-full bg-black overflow-hidden relative px-2 md:px-8">
       {/* Top Left CircularText */}
-      <div className="absolute top-4 left-2 md:top-8 md:left-8 z-30">
+      <div className="absolute top-2 left-1 md:top-8 md:left-8 z-30">
         <CircularText
           text="SUNHACKS*HACKATHON*"
           onHover="speedUp"
@@ -30,7 +30,7 @@ export function HeroScrollDemo() {
         />
       </div>
       {/* Top Right CircularText */}
-      <div className="absolute top-4 right-2 md:top-8 md:right-8 z-30">
+      <div className="absolute top-2 right-1 md:top-8 md:right-8 z-30">
         <CircularText
           text="SUNHACKS*HACKATHON*"
           onHover="speedUp"
@@ -42,9 +42,9 @@ export function HeroScrollDemo() {
       <ContainerScroll
         titleComponent={
           <>
-            <h1 className="text-4xl font-semibold text-white dark:text-white">
+            <h1 className="text-2xl md:text-4xl font-semibold text-white dark:text-white">
             🏆 Prize Pool Reveal! <br />
-              <span className="text-4xl md:text-[6rem] font-bold mt-1 leading-none">
+              <span className="text-3xl md:text-[6rem] font-bold mt-1 leading-none">
                 1,50,000+ 
               </span>
             </h1>
@@ -58,7 +58,7 @@ export function HeroScrollDemo() {
             draggable={false}
             width={1400}
             height={720}
-            className="mx-auto w-[400px] md:w-[850px] rounded-2xl hidden md:block md:object-fill h-fit md:h-full"
+            className="mx-auto w-[90vw] max-w-[400px] md:max-w-[850px] rounded-2xl hidden md:block md:object-fill h-fit md:h-full"
             src={"/trophy2.png"}
             priority
           />
@@ -68,7 +68,7 @@ export function HeroScrollDemo() {
             draggable={false}
             width={1400}
             height={720}
-            className="mx-auto w-[400px] md:w-[800px] rounded-2xl block md:hidden md:object-cover h-fit md:h-full"
+            className="mx-auto w-[90vw] max-w-[400px] md:max-w-[800px] rounded-2xl block md:hidden md:object-cover h-fit md:h-full"
             src={"/trophy4.png"}
             priority
           />
