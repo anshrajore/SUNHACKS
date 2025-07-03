@@ -523,7 +523,17 @@ export const Component = () => {
           <span className="title-line">With India</span>
         </h1>
         <p className="hero-subtitle">Where Innovation Begins – In collaboration with Hack with India.</p>
-        <p className="hero-credit">Innovate Today, Impact Tomorrow.</p>
+        <div className="hero-credit flex flex-col items-center gap-2">
+          <a
+            href="https://hackwithindia.in/About"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-4 py-2 border border-white text-white rounded-md font-semibold shadow-none bg-transparent hover:bg-white/10 transition text-center"
+            style={{marginBottom: '0.5rem'}}
+          >
+            More about Hack With India
+          </a>
+        </div>
       </div>
       <div className="audio-progress">
         <div 

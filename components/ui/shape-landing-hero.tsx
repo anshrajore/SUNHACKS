@@ -96,7 +96,7 @@ function HeroGeometric({
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1.2, delay: 0.3, ease: [0.23, 0.86, 0.39, 0.96] }}
             >
-                <Image src="/sandip logo.png" alt="Sandip University Logo" width={180} height={180} className="w-38 h-38 md:w-54  object-contain" priority />
+                <Image src="/sandip logo.png" alt="Sandip University Logo" width={180} height={180} className="w-48 h-48 md:w-54  object-contain" priority />
             </motion.div>
             <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/[0.05] via-transparent to-rose-500/[0.05] blur-3xl" />
 

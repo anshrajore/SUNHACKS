@@ -52,12 +52,12 @@ const FAQ_SECTIONS: Record<ViewType, FAQSection> = {
       {
         id: "hackathon-format",
         question: "What is the format of the hackathon?",
-        answer: "It's an in-person, 36-hour non-stop hackathon held at Sandip University, Nashik on 22nd–23rd July 2025.",
+        answer: "It's an in-person, 36-hour non-stop hackathon held at Sandip University, Nashik.",
       },
       {
         id: "accommodation-meals",
         question: "Will accommodation and meals be provided?",
-        answer: "Yes! All participants will receive free accommodation and meals during the event dates (22nd–23rd July only).",
+        answer: "Yes! All participants will receive free accommodation and meals during the event dates .",
       },
       {
         id: "what-to-bring",
@@ -190,12 +190,12 @@ export const ContactUsSection = () => {
           <div className="text-[#ff0055] text-base md:text-lg font-semibold animate-pulse">India&apos;s Most Energetic Student Hackathon</div>
           <div className="text-white/70 text-base md:text-lg max-w-md">36 hours of non-stop innovation, collaboration, and fun! Join 1500+ hackers, creators, and dreamers at Sandip University, Nashik.</div>
           <div className="flex flex-col gap-1 mt-2">
-            <div className="text-white/80 text-sm md:text-base"><span className="font-bold text-[#ff0055]">Event Dates:</span> 22nd–23rd July 2025</div>
+            <div className="text-white/80 text-sm md:text-base"><span className="font-bold text-[#ff0055]">Event Dates:</span> TBA 2025</div>
             <div className="text-white/80 text-sm md:text-base"><span className="font-bold text-[#ff0055]">Venue:</span> Sandip University, Mahiravani, Tal & Dist: Nashik - Trambakeshwar Rd, Nashik, Maharashtra 422213</div>
             <div className="text-white/80 text-sm md:text-base"><span className="font-bold text-[#ff0055]">Organizer Phone:</span> +91-9096946604</div>
           </div>
           {/* Glowing Join Discord Button */}
-          <a href="https://discord.gg/8hWwtGbt" target="_blank" rel="noopener noreferrer" className="mt-6 inline-block px-8 py-3 rounded-full font-bold text-lg bg-gradient-to-r from-[#5865F2] via-[#ff0055] to-[#0077b5] text-white shadow-lg shadow-[#5865F2]/40 animate-glow hover:scale-105 transition-transform duration-200 border-2 border-white/10 hover:border-[#5865F2] focus:outline-none focus:ring-2 focus:ring-[#5865F2]">
+          <a href="https://discord.gg/mdwBkR4T" target="_blank" rel="noopener noreferrer" className="mt-6 inline-block px-8 py-3 rounded-full font-bold text-lg bg-gradient-to-r from-[#5865F2] via-[#ff0055] to-[#0077b5] text-white shadow-lg shadow-[#5865F2]/40 animate-glow hover:scale-105 transition-transform duration-200 border-2 border-white/10 hover:border-[#5865F2] focus:outline-none focus:ring-2 focus:ring-[#5865F2]">
             <span className="flex items-center gap-2"><FaDiscord className="text-2xl animate-spin-slow" /> Join our Discord</span>
           </a>
         </div>
@@ -214,7 +214,7 @@ export const ContactUsSection = () => {
             <div className="flex gap-4">
               <a href="https://www.instagram.com/sunhack_official?igsh=eng2MnJjMGJvNDR1" className="bg-white/10 hover:bg-[#ff0055] hover:text-white text-white p-3 rounded-full shadow-lg transition-colors duration-200 flex items-center justify-center text-2xl animate-glow"><FaInstagram /></a>
               <a href="https://www.linkedin.com/in/sun-hacks-69a5b9371?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" className="bg-white/10 hover:bg-[#0077b5] hover:text-white text-white p-3 rounded-full shadow-lg transition-colors duration-200 flex items-center justify-center text-2xl animate-glow"><FaLinkedin /></a>
-              <a href="https://discord.gg/8hWwtGbt" className="bg-white/10 hover:bg-[#5865F2] hover:text-white text-white p-3 rounded-full shadow-lg transition-colors duration-200 flex items-center justify-center text-2xl animate-glow"><FaDiscord /></a>
+              <a href="https://discord.gg/mdwBkR4T" className="bg-white/10 hover:bg-[#5865F2] hover:text-white text-white p-3 rounded-full shadow-lg transition-colors duration-200 flex items-center justify-center text-2xl animate-glow"><FaDiscord /></a>
             </div>
           </div>
         </div>
@@ -233,10 +233,10 @@ export const ContactUsSection = () => {
       <div className="w-full border-t border-white/20 mt-10 pt-6 flex flex-col md:flex-row items-center justify-between gap-4 text-white/60 text-xs md:text-sm">
         <div>© {new Date().getFullYear()} SunHacks. All rights reserved.</div>
         <div className="flex gap-4">
-          <a href="#" className="hover:text-white">Code of Conduct</a>
+          <a href="/code-of-conduct" className="hover:text-white">Code of Conduct</a>
           <Link href="/participant-guidelines" className="hover:text-white">Participant Guidelines</Link>
         </div>
-        <div className="flex items-center gap-1">Made by Ansh Rajore <span className="text-[#ff0055]">♥</span></div>
+        <div className="flex items-center gap-1">Made by Sunhacks Team <span className="text-[#ff0055]">♥</span></div>
       </div>
       {/* Custom Animations */}
       <style jsx>{`

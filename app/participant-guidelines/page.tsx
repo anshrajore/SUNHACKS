@@ -101,7 +101,7 @@ export default function ParticipantGuidelines() {
           <div>
             <h2 className="flex items-center gap-2 text-xl md:text-2xl font-bold text-[#ff0055] mb-2"><FaBed /> Accommodation & Facilities</h2>
             <ul className="text-white/90 list-disc ml-6 space-y-1">
-              <li>Free accommodation is provided on 22nd & 23rd July 2025 only.</li>
+              <li>Free accommodation is provided.</li>
               <li>For early arrival, participants must inform the organizing team at least 72 hours in advance (note: early meals/services will not be provided).</li>
               <li>Participants must bring their own laptops, chargers, and peripherals. Power and internet access will be available.</li>
             </ul>

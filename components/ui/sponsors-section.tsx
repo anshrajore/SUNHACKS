@@ -14,16 +14,11 @@ import {
 import "./ScrollVelocity.css";
 
 const sponsors = [
-  { name: "Sponsor 1", logo: "/public/logo1.png" },
-  { name: "Sponsor 2", logo: "/public/logo1.png" },
-  { name: "Sponsor 3", logo: "/public/logo1.png" },
-  { name: "Sponsor 4", logo: "/public/logo1.png" },
-  { name: "Sponsor 5", logo: "/public/logo1.png" },
-  { name: "Sponsor 6", logo: "/public/logo1.png" },
-  { name: "Sponsor 7", logo: "/public/logo1.png" },
-  { name: "Sponsor 8", logo: "/public/logo1.png" },
-  { name: "Sponsor 9", logo: "/public/logo1.png" },
-  { name: "Sponsor 10", logo: "/public/logo1.png" },
+  { name: "Sponsor 1", logo: "/public/sp1.webp" },
+  { name: "Sponsor 2", logo: "/public/sp1.webp" },
+  { name: "Sponsor 3", logo: "/public/sp1.webp" },
+  { name: "Sponsor 4", logo: "/public/sp1.webp" },
+  { name: "Sponsor 5", logo: "/public/sp1.webp" },
   
 ];
 
