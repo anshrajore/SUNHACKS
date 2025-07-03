@@ -14,11 +14,11 @@ import {
 import "./ScrollVelocity.css";
 
 const sponsors = [
-  { name: "Sponsor 1", logo: "/public/sp1.webp" },
-  { name: "Sponsor 2", logo: "/public/sp1.webp" },
-  { name: "Sponsor 3", logo: "/public/sp1.webp" },
-  { name: "Sponsor 4", logo: "/public/sp1.webp" },
-  { name: "Sponsor 5", logo: "/public/sp1.webp" },
+  { name: "Sponsor 1", logo: "/public/sp2.webp" },
+  { name: "Sponsor 2", logo: "/public/sp2.webp" },
+  { name: "Sponsor 3", logo: "/public/sp2.webp" },
+  { name: "Sponsor 4", logo: "/public/sp2.webp" },
+  { name: "Sponsor 5", logo: "/public/sp2.webp" },
   
 ];
 
@@ -234,14 +234,18 @@ export default function SponsorsSection() {
             className="flex items-center justify-center bg-white rounded-2xl shadow-lg h-24 md:h-28 px-4 py-2 transition-transform hover:scale-105"
             style={{ minHeight: 96 }}
           >
-            <Image
-              src={s.logo.replace("/public", "")}
-              alt={s.name}
-              width={120}
-              height={48}
-              className="max-h-12 md:max-h-16 object-contain mx-auto"
-              style={{ maxWidth: "90%" }}
-            />
+            {s.logo === "/public/sp2.webp" ? (
+              <span className="text-gray-400 text-lg font-semibold text-center w-full">Announced Soon</span>
+            ) : (
+              <Image
+                src={s.logo.replace("/public", "")}
+                alt={s.name}
+                width={120}
+                height={48}
+                className="max-h-12 md:max-h-16 object-contain mx-auto"
+                style={{ maxWidth: "90%" }}
+              />
+            )}
           </div>
         ))}
       </div>
