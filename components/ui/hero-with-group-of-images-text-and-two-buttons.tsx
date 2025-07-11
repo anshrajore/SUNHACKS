@@ -40,6 +40,19 @@ function Hero() {
                   Join us in this transformative journey — where technology meets ambition, and innovation makes history.
                 </p>
               </div>
+              {/* Glass/space-themed button to timeline */}
+              <a
+                href="/timeline"
+                className="mt-8 inline-flex items-center justify-center px-8 py-3 rounded-2xl bg-white/10 backdrop-blur-md border border-cyan-400/40 text-cyan-200 font-bold text-lg shadow-lg transition-all duration-200 hover:bg-cyan-400/20 hover:text-white hover:scale-105 focus:outline-none focus:ring-2 focus:ring-cyan-400/60 glassy-space-btn relative overflow-hidden"
+                style={{boxShadow: '0 0 24px 4px #00ffff33, 0 0 48px 8px #a259ff22'}}
+              >
+                <span className="mr-2 text-2xl animate-spin-slow">🪐</span>
+                View Full Timeline
+                <span className="ml-2 text-xl animate-float">🚀</span>
+                {/* Sparkle effect */}
+                <span className="absolute left-2 top-2 w-2 h-2 bg-cyan-300 rounded-full opacity-70 animate-pulse-slow" />
+                <span className="absolute right-2 bottom-2 w-1.5 h-1.5 bg-purple-400 rounded-full opacity-60 animate-float" />
+              </a>
             </div>
           </div>
           <div className="grid grid-cols-2 gap-4 md:gap-8 mt-8 md:mt-0">
@@ -55,6 +68,27 @@ function Hero() {
           </div>
         </div>
       </div>
+      <style jsx>{`
+        .glassy-space-btn {
+          background: linear-gradient(120deg, rgba(0,0,32,0.7) 0%, rgba(0,0,0,0.8) 100%);
+          border: 1.5px solid rgba(0,255,255,0.18);
+          box-shadow: 0 0 24px 4px #00ffff33, 0 0 48px 8px #a259ff22;
+        }
+        .animate-spin-slow {
+          animation: spinSlow 12s linear infinite;
+        }
+        @keyframes spinSlow {
+          0% { transform: rotate(0deg); }
+          100% { transform: rotate(360deg); }
+        }
+        .animate-float {
+          animation: float 5s ease-in-out infinite alternate;
+        }
+        @keyframes float {
+          0% { transform: translateY(0) scale(1); }
+          100% { transform: translateY(-8px) scale(1.08); }
+        }
+      `}</style>
     </div>
   );
 }

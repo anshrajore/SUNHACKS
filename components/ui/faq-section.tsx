@@ -213,7 +213,7 @@ export const ContactUsSection = () => {
             <div className="text-white/80 text-lg font-semibold mb-1">Follow Us:</div>
             <div className="flex gap-4">
               <a href="https://www.instagram.com/sunhack_official?igsh=eng2MnJjMGJvNDR1" className="bg-white/10 hover:bg-[#ff0055] hover:text-white text-white p-3 rounded-full shadow-lg transition-colors duration-200 flex items-center justify-center text-2xl animate-glow"><FaInstagram /></a>
-              <a href="https://www.linkedin.com/in/sun-hacks-69a5b9371?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" className="bg-white/10 hover:bg-[#0077b5] hover:text-white text-white p-3 rounded-full shadow-lg transition-colors duration-200 flex items-center justify-center text-2xl animate-glow"><FaLinkedin /></a>
+              <a href="https://www.linkedin.com/in/sunhacks-hackathon-996256373/" className="bg-white/10 hover:bg-[#0077b5] hover:text-white text-white p-3 rounded-full shadow-lg transition-colors duration-200 flex items-center justify-center text-2xl animate-glow"><FaLinkedin /></a>
               <a href="https://discord.gg/mdwBkR4T" className="bg-white/10 hover:bg-[#5865F2] hover:text-white text-white p-3 rounded-full shadow-lg transition-colors duration-200 flex items-center justify-center text-2xl animate-glow"><FaDiscord /></a>
             </div>
           </div>
