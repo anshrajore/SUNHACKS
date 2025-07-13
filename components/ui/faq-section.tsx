@@ -195,7 +195,7 @@ export const ContactUsSection = () => {
             <div className="text-white/80 text-sm md:text-base"><span className="font-bold text-[#ff0055]">Organizer Phone:</span> +91-9096946604</div>
           </div>
           {/* Glowing Join Discord Button */}
-          <a href="https://discord.gg/grHFPU8K" target="_blank" rel="noopener noreferrer" className="mt-6 inline-block px-8 py-3 rounded-full font-bold text-lg bg-gradient-to-r from-[#5865F2] via-[#ff0055] to-[#0077b5] text-white shadow-lg shadow-[#5865F2]/40 animate-glow hover:scale-105 transition-transform duration-200 border-2 border-white/10 hover:border-[#5865F2] focus:outline-none focus:ring-2 focus:ring-[#5865F2]">
+          <a href="https://discord.gg/fPKmeGQEJ9" target="_blank" rel="noopener noreferrer" className="mt-6 inline-block px-8 py-3 rounded-full font-bold text-lg bg-gradient-to-r from-[#5865F2] via-[#ff0055] to-[#0077b5] text-white shadow-lg shadow-[#5865F2]/40 animate-glow hover:scale-105 transition-transform duration-200 border-2 border-white/10 hover:border-[#5865F2] focus:outline-none focus:ring-2 focus:ring-[#5865F2]">
             <span className="flex items-center gap-2"><FaDiscord className="text-2xl animate-spin-slow" /> Join our Discord</span>
           </a>
         </div>
@@ -214,7 +214,7 @@ export const ContactUsSection = () => {
             <div className="flex gap-4">
               <a href="https://www.instagram.com/sunhack_official?igsh=eng2MnJjMGJvNDR1" className="bg-white/10 hover:bg-[#ff0055] hover:text-white text-white p-3 rounded-full shadow-lg transition-colors duration-200 flex items-center justify-center text-2xl animate-glow"><FaInstagram /></a>
               <a href="https://www.linkedin.com/in/sunhacks-hackathon-996256373/" className="bg-white/10 hover:bg-[#0077b5] hover:text-white text-white p-3 rounded-full shadow-lg transition-colors duration-200 flex items-center justify-center text-2xl animate-glow"><FaLinkedin /></a>
-              <a href="https://discord.gg/grHFPU8K" className="bg-white/10 hover:bg-[#5865F2] hover:text-white text-white p-3 rounded-full shadow-lg transition-colors duration-200 flex items-center justify-center text-2xl animate-glow"><FaDiscord /></a>
+              <a href="https://discord.gg/fPKmeGQEJ9" className="bg-white/10 hover:bg-[#5865F2] hover:text-white text-white p-3 rounded-full shadow-lg transition-colors duration-200 flex items-center justify-center text-2xl animate-glow"><FaDiscord /></a>
             </div>
           </div>
         </div>

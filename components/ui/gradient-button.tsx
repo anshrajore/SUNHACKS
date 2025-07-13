@@ -51,7 +51,7 @@ GradientButton.displayName = "GradientButton"
 function Demo() {
   return (
     <div className="flex gap-4">
-      <a href="https://discord.gg/mdwBkR4T" target="_blank" rel="noopener noreferrer">
+      <a href="https://discord.gg/fPKmeGQEJ9" target="_blank" rel="noopener noreferrer">
         <GradientButton>JOIN DISCORD</GradientButton>
       </a>
       <a href="https://devnovate.co/event/sunhacks-2025" target="_blank" rel="noopener noreferrer">
