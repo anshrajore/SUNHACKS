@@ -47,7 +47,7 @@ const FAQ_SECTIONS: Record<ViewType, FAQSection> = {
       {
         id: "solo-participation",
         question: "Can I participate solo?",
-        answer: "No, each team must have 2 to 4 members. If you register alone, don't worry — we'll help you form a team during the event.",
+        answer: "No, each team must have 2 to 4 members.",
       },
       {
         id: "hackathon-format",
@@ -190,12 +190,12 @@ export const ContactUsSection = () => {
           <div className="text-[#ff0055] text-base md:text-lg font-semibold animate-pulse">India&apos;s Most Energetic Student Hackathon</div>
           <div className="text-white/70 text-base md:text-lg max-w-md">36 hours of non-stop innovation, collaboration, and fun! Join 1500+ hackers, creators, and dreamers at Sandip University, Nashik.</div>
           <div className="flex flex-col gap-1 mt-2">
-            <div className="text-white/80 text-sm md:text-base"><span className="font-bold text-[#ff0055]">Event Dates:</span> TBA 2025</div>
+            <div className="text-white/80 text-sm md:text-base"><span className="font-bold text-[#ff0055]">Event Dates:</span> 21st - 23rd August 2025</div>
             <div className="text-white/80 text-sm md:text-base"><span className="font-bold text-[#ff0055]">Venue:</span> Sandip University, Mahiravani, Tal & Dist: Nashik - Trambakeshwar Rd, Nashik, Maharashtra 422213</div>
             <div className="text-white/80 text-sm md:text-base"><span className="font-bold text-[#ff0055]">Organizer Phone:</span> +91-9096946604</div>
           </div>
           {/* Glowing Join Discord Button */}
-          <a href="https://discord.gg/mdwBkR4T" target="_blank" rel="noopener noreferrer" className="mt-6 inline-block px-8 py-3 rounded-full font-bold text-lg bg-gradient-to-r from-[#5865F2] via-[#ff0055] to-[#0077b5] text-white shadow-lg shadow-[#5865F2]/40 animate-glow hover:scale-105 transition-transform duration-200 border-2 border-white/10 hover:border-[#5865F2] focus:outline-none focus:ring-2 focus:ring-[#5865F2]">
+          <a href="https://discord.gg/grHFPU8K" target="_blank" rel="noopener noreferrer" className="mt-6 inline-block px-8 py-3 rounded-full font-bold text-lg bg-gradient-to-r from-[#5865F2] via-[#ff0055] to-[#0077b5] text-white shadow-lg shadow-[#5865F2]/40 animate-glow hover:scale-105 transition-transform duration-200 border-2 border-white/10 hover:border-[#5865F2] focus:outline-none focus:ring-2 focus:ring-[#5865F2]">
             <span className="flex items-center gap-2"><FaDiscord className="text-2xl animate-spin-slow" /> Join our Discord</span>
           </a>
         </div>
@@ -214,7 +214,7 @@ export const ContactUsSection = () => {
             <div className="flex gap-4">
               <a href="https://www.instagram.com/sunhack_official?igsh=eng2MnJjMGJvNDR1" className="bg-white/10 hover:bg-[#ff0055] hover:text-white text-white p-3 rounded-full shadow-lg transition-colors duration-200 flex items-center justify-center text-2xl animate-glow"><FaInstagram /></a>
               <a href="https://www.linkedin.com/in/sunhacks-hackathon-996256373/" className="bg-white/10 hover:bg-[#0077b5] hover:text-white text-white p-3 rounded-full shadow-lg transition-colors duration-200 flex items-center justify-center text-2xl animate-glow"><FaLinkedin /></a>
-              <a href="https://discord.gg/mdwBkR4T" className="bg-white/10 hover:bg-[#5865F2] hover:text-white text-white p-3 rounded-full shadow-lg transition-colors duration-200 flex items-center justify-center text-2xl animate-glow"><FaDiscord /></a>
+              <a href="https://discord.gg/grHFPU8K" className="bg-white/10 hover:bg-[#5865F2] hover:text-white text-white p-3 rounded-full shadow-lg transition-colors duration-200 flex items-center justify-center text-2xl animate-glow"><FaDiscord /></a>
             </div>
           </div>
         </div>
