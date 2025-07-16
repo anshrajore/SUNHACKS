@@ -30,8 +30,8 @@ const TIMELINE = [
       { time: "4:00 PM – 5:00 PM", icon: "🧑‍🏫", title: "Mentor Round 3 – Final Check", description: "Final suggestions to polish and finalize projects." },
       { time: "6:00 PM – 6:30 PM", icon: "☕", title: "Refreshment Break", description: "Light snacks and drinks for a quick recharge." },
       { time: "7:00 PM – 8:30 PM", icon: "🔥", title: "Campfire + Chill Session", description: "Outdoor hangout with networking, music, and fun." },
-      { time: "8:30 PM – 9:00 PM", icon: "🍪", title: "Midnight Snacks", description: "Night-time munchies for energy and focus." },
-      { time: "9:00 PM onwards", icon: "💻", title: "Final Night of Hacking", description: "Wrap up development and prepare for demo." },
+      { time: "8:30 PM – 10:00 PM", icon: "🍪", title: "Dinner", description: "Night-time munchies for energy and focus." },
+      { time: "10:00 PM onwards", icon: "💻", title: "Final Night of Hacking", description: "Wrap up development and prepare for demo." },
     ],
   },
   {

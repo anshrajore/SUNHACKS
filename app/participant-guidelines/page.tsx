@@ -41,7 +41,7 @@ export default function ParticipantGuidelines() {
           <div>
             <h2 className="flex items-center gap-2 text-xl md:text-2xl font-bold text-[#ff0055] mb-2"><FaUsers /> Team Composition</h2>
             <ul className="text-white/90 list-disc ml-6 space-y-1">
-              <li>Each team must comprise 2 to 4 members.</li>
+              <li>Each team must comprise of 2 to 4 members.</li>
               <li>Solo participation and post-registration team changes are strictly prohibited.</li>
               <li>Teams must select only one track at registration. Track changes post-registration will lead to disqualification.</li>
             </ul>

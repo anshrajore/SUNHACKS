@@ -224,7 +224,7 @@ function HeroGeometric({
 export { HeroGeometric }
 
 function DemoHeroGeometric() {
-    return <HeroGeometric badge="Welcome to" title2="International Level Hackathon"  description="Leading the Future of AI — Organizing India's Largest GenAI Hackathon." />;
+    return <HeroGeometric badge="Welcome to" title2="International Level Hackathon"  description="We are Leading the Future of AI — by Organizing the India's Largest GenAI Hackathon." />;
 }
 
 export { DemoHeroGeometric }
