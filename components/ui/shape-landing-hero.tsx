@@ -91,12 +91,22 @@ function HeroGeometric({
         <div className="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-[#030303]">
             {/* Sandip University Logo - Top Left with fade-in */}
             <motion.div
-                className="absolute top-0 left-4 md:top-0 md:right-5 z-30"
+                className="absolute top-2 left-2 md:top-4 md:left-6 z-30"
                 initial={{ opacity: 0, y: -30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1.2, delay: 0.3, ease: [0.23, 0.86, 0.39, 0.96] }}
             >
-                <Image src="/sandip logo.png" alt="Sandip University Logo" width={180} height={180} className="w-48 h-48 md:w-54  object-contain" priority />
+                <Image src="/sandip logo.png" alt="Sandip University Logo" width={140} height={140} className="w-24 h-24 md:w-28 md:h-28 lg:w-32 lg:h-32 object-contain" priority />
+            </motion.div>
+
+            {/* ESDS Logo - Top Right with fade-in */}
+            <motion.div
+                className="absolute top-2 right-2 md:top-4 md:right-6 z-30"
+                initial={{ opacity: 0, y: -30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1.2, delay: 0.5, ease: [0.23, 0.86, 0.39, 0.96] }}
+            >
+                <Image src="/ESDS Logo.png" alt="ESDS Logo" width={140} height={140} className="w-24 h-24 md:w-28 md:h-28 lg:w-32 lg:h-32 object-contain" priority />
             </motion.div>
             <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/[0.05] via-transparent to-rose-500/[0.05] blur-3xl" />
 

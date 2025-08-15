@@ -14,7 +14,7 @@ import {
 import "./ScrollVelocity.css";
 
 const sponsors = [
-  { name: "Sponsor 1", logo: "/public/sp2.webp" },
+  { name: "Sponsor 1", logo: "/public/ESDS Logo.png" },
   { name: "Sponsor 2", logo: "/public/sp2.webp" },
   { name: "Sponsor 3", logo: "/public/sp2.webp" },
   { name: "Sponsor 4", logo: "/public/sp2.webp" },
@@ -228,23 +228,38 @@ export default function SponsorsSection() {
       </h2>
       {/* Sponsors grid */}
       <div className="relative z-10 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6 md:gap-8 w-full max-w-6xl mb-12 px-2 md:px-0">
-        {sponsors.map((s) => (
-          <div
-            key={s.name}
-            className="flex items-center justify-center bg-white rounded-2xl shadow-lg h-24 md:h-28 px-4 py-2 transition-transform hover:scale-105"
-            style={{ minHeight: 96 }}
-          >
-            {s.logo === "/public/sp2.webp" ? (
-              <span className="text-gray-400 text-lg font-semibold text-center w-full">Announced Soon</span>
-            ) : (
-              <Image
-                src={s.logo.replace("/public", "")}
-                alt={s.name}
-                width={120}
-                height={48}
-                className="max-h-12 md:max-h-16 object-contain mx-auto"
-                style={{ maxWidth: "90%" }}
-              />
+        {sponsors.map((s, index) => (
+          <div key={s.name} className="flex flex-col items-center">
+            <div
+              className="flex items-center justify-center bg-white rounded-2xl shadow-lg h-24 md:h-28 px-4 py-2 transition-transform hover:scale-105 relative"
+              style={{ 
+                minHeight: 96,
+                boxShadow: '0 10px 25px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.1)'
+              }}
+            >
+              {s.logo === "/public/sp2.webp" ? (
+                <span className="text-gray-400 text-lg font-semibold text-center w-full">Announced Soon</span>
+              ) : (
+                <Image
+                  src={s.logo.replace("/public", "")}
+                  alt={s.name}
+                  width={200}
+                  height={80}
+                  className="max-h-20 md:max-h-24 object-contain mx-auto"
+                  style={{ 
+                    maxWidth: "100%",
+                    filter: s.logo === "/public/ESDS Logo.png" ? "drop-shadow(0 8px 16px rgba(0, 0, 0, 0.6))" : "none"
+                  }}
+                />
+              )}
+            </div>
+            {/* Gold Sponsor label for Sponsor 1 */}
+            {index === 0 && (
+              <div className="mt-2 text-center">
+                <span className="text-yellow-400 font-bold text-sm md:text-base bg-black px-3 py-1 rounded-full border border-yellow-400">
+                  🏆 GOLD SPONSOR
+                </span>
+              </div>
             )}
           </div>
         ))}
