@@ -54,7 +54,7 @@ function Demo() {
       <a href="https://discord.gg/fPKmeGQEJ9" target="_blank" rel="noopener noreferrer">
         <GradientButton>JOIN DISCORD</GradientButton>
       </a>
-      <a href="https://devnovate.co/event/sunhacks-2025" target="_blank" rel="noopener noreferrer">
+      <a href="https://forms.gle/KUJUS71DuqUYWhDE7" target="_blank" rel="noopener noreferrer">
         <GradientButton variant="variant">REGISTER NOW</GradientButton>
       </a>
     </div>
